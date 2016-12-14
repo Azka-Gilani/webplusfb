@@ -379,7 +379,7 @@ def makeWebhookResult(data):
     }
 
     return {
-        "speech": smooch,
+        "speech": speech,
         "displayText": smooch,
         "data": {"facebook": message},
         # "contextOut": [],
