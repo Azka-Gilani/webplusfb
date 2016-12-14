@@ -228,8 +228,6 @@ def makeWebhookResult(data):
         i+=1
         
     speech = "Here are some properties with your choice: "+"\n"+row_title[0] +" in "+ row_location[0] + " with price "+ row_price[0] +"\n"+ row_title[1] +" in "+ row_location[1] + " with price "+ row_price[1]
-    print("Response:")
-    print(speech)
     smooch= {
                 "text" : "Press Buy Now to purchase this shirt.",
                 "role" : "appMaker",
