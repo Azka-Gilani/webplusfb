@@ -310,74 +310,48 @@ def makeWebhookResult(data):
   }
     else:
         message= {
-         "attachment": {
-           "type": "template",
-            "payload": {
-               "template_type": "generic",
-               "elements": [{
-               "title": row_title[0],
-               "subtitle": row_location[0],
-               "item_url": "https://www.aarz.pk/property-detail/"+row_slug[0],               
-               "image_url":"http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg" ,
-                "buttons": [{
-                "type": "web_url",
-                "url":  "https://www.aarz.pk/property-detail/"+row_slug[0],  
-                "title": "Open Web URL"
-            }, 
-                   ],
-          }, 
-                   {
-                "title": row_title[1],
-                "subtitle": row_location[1],
-                "item_url":   "https://www.aarz.pk/property-detail/"+row_slug[1],             
-                "image_url": "http://www.aarz.pk/assets/images/properties/"+row_id[1]+"/"+row_id[1]+".actual.0.jpg",
-                "buttons": [{
-                "type": "web_url",
-                "url":  "https://www.aarz.pk/property-detail/"+row_slug[1],  
-                "title": "Open Web URL"
-            },
-                   ]
-          }]
             
-        }
-      },
-             "quick_replies": [
+  "type": "catalogue",
+  "msgid": "cat_212",
+  "items": [{
+    "title": "White T Shirt",
+    "subtitle": "Soft cotton t-shirt \nXs, S, M, L \n$10",
+    "imgurl": "http://petersapparel.parseapp.com/img/item100-thumb.png",
+    "options": [
+        {
+        "type": "url",
+        "title": "View Details",
+        "url": "http://petersapparel.parseapp.com/img/item100-thumb.png"
+      }, 
             {
-                "content_type":"text",
-                "title": QR[0],
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": QR[1],
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": QR[2],
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": QR[3],
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": QR[4],
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": "Purchase Property",
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            }
-        ]
+        "type": "text",
+        "title": "Buy"
+      }
+
+    ]
+  }, 
+     {
+    "title": "Grey T Shirt",
+    "subtitle": "Soft cotton t-shirt \nXs, S, M, L \n$12",
+    "imgurl": "http://petersapparel.parseapp.com/img/item101-thumb.png",
+    "options": [
+        {
+      "type": "url",
+      "title": "View Details",
+      "url": "http://petersapparel.parseapp.com/img/item101-thumb.png"
+    }, 
+        {
+      "type": "text",
+      "title": "Buy"
+    }]
+  }]
+
+         
     }
     return {
         "speech": speech,
-        "displayText": "test",
-        "data": {"facebook": message},
+        "displayText": speech,
+        "data": {message},
         # "contextOut": [],
         #"source": "apiai-weather-webhook-sample"
     }
