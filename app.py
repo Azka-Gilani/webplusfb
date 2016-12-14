@@ -228,6 +228,18 @@ def makeWebhookResult(data):
         i+=1
         
     speech = "Here are some properties with your choice: "+"\n"+row_title[0] +" in "+ row_location[0] + " with price "+ row_price[0] +"\n"+ row_title[1] +" in "+ row_location[1] + " with price "+ row_price[1]
+    smooch={
+
+        "text" : "Press Buy Now to purchase this shirt.",
+        "role" : "appMaker",
+        "name" : "Kevin from Shoplifter",
+        "metadata" : {
+            "buy_url" : "http://goo.gl/SYOXQ4",
+            "item_img" : "http://goo.gl/Ap9UpF" 
+            }
+        }
+    
+    
     print("Response:")
     print(speech)
     if "unable" in row_title[0]:
@@ -367,8 +379,8 @@ def makeWebhookResult(data):
     }
 
     return {
-        "speech": speech,
-        "displayText": speech,
+        "speech": smooch,
+        "displayText": smooch,
         "data": {"facebook": message},
         # "contextOut": [],
         #"source": "apiai-weather-webhook-sample"
