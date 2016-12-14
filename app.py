@@ -230,6 +230,15 @@ def makeWebhookResult(data):
     speech = "Here are some properties with your choice: "+"\n"+row_title[0] +" in "+ row_location[0] + " with price "+ row_price[0] +"\n"+ row_title[1] +" in "+ row_location[1] + " with price "+ row_price[1]
     print("Response:")
     print(speech)
+    smooch= {
+                "text" : "Press Buy Now to purchase this shirt.",
+                "role" : "appMaker",
+                "name" : "Kevin from Shoplifter",
+                "metadata" : {
+                "buy_url" : "http://google.com/SYOXQ4",
+                "item_img" : "http://google.com/Ap9UpF" 
+                   }
+              }
     if "unable" in row_title[0]:
         message={
          "text":row_title[0],
@@ -365,7 +374,6 @@ def makeWebhookResult(data):
             }
         ]
     }
-
     return {
         "speech": speech,
         "displayText": "test",
