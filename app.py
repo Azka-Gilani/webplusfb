@@ -308,35 +308,11 @@ def makeWebhookResult(data):
   }
     else:
         message= {
-           "role": "appMaker",
-    "type": "carousel",
-    "items": [{
-        "title": "Tacos",
-        "description": "Description",
-        "mediaUrl": "http://example.org/image.jpg",
-        "actions": [{
-            "text": "Select",
-            "type": "postback",
-            "payload": "TACOS"
-        }, {
-            "text": "More info",
-            "type": "link",
-            "uri": "http://example.org"
-        }]
-    }, {
-        "title": "Ramen",
-        "description": "Description",
-        "mediaUrl": "http://example.org/image.jpg",
-        "actions": [{
-            "text": "Select",
-            "type": "postback",
-            "payload": "RAMEN"
-        }, {
-            "text": "More info",
-            "type": "link",
-            "uri": "http://example.org"
-        }]
-    }]    
+         "text":"Just put some vinegar on it", 
+            "role": "appMaker",
+            "type": "text",
+            "actions": [{"type": "link", "text": "Put vinegar", "uri": "http://example.com" }]
+        
     }
     return {
         "speech": speech,
