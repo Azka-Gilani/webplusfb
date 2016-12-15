@@ -115,7 +115,6 @@ def processIntentName(req):
     return intent
 
 def sendSparkPOST(url, data):
-    
     request = urllib2.Request(url, json.dumps(data),
     headers={"Accept" : "application/json","Content-Type":"application/json"})
     request.add_header("Authorization", "Bearer "+bearer)
@@ -218,6 +217,16 @@ def processFuel(req):
     parameters = result.get("parameters")
     fuel = parameters.get("fuelstation")
     return fuel
+ message1= {
+         "text":"Just put some vinegar on it", 
+            "role": "appMaker",
+            "type": "text",
+            "actions": [{"type": "link", "text": "Put vinegar", "uri": "http://example.com" }]
+        
+    }
+    
+    
+    sendSparkPOST("https://api.smooch.io/v1/appusers/c7f6e6d6c3a637261bd9656f/messages", message)
 
 def makeWebhookResult(data):
     i=0
@@ -236,17 +245,6 @@ def makeWebhookResult(data):
         i+=1
         
     speech = "Here are some properties with your choice: "+"\n"+row_title[0] +" in "+ row_location[0] + " with price "+ row_price[0] +"\n"+ row_title[1] +" in "+ row_location[1] + " with price "+ row_price[1]
-    smooch= {
-                "text" : "Press Buy Now to purchase this shirt.",
-                "role" : "appMaker",
-                "name" : "Kevin from Shoplifter",
-                "metadata" : {
-                "buy_url" : "http://google.com/SYOXQ4",
-                "item_img" : "http://google.com/Ap9UpF" 
-                   }
-              }
-    
-    sendSparkPOST("https://api.smooch.io/v1/appusers/c7f6e6d6c3a637261bd9656f/messages", smooch)
     if "unable" in row_title[0]:
         message={
          "text":row_title[0],
