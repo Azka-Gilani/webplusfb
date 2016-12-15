@@ -114,6 +114,14 @@ def processIntentName(req):
     intent = parameters.get("intentName")
     return intent
 
+def sendSparkPOST(url, data):
+    
+    request = urllib2.Request(url, json.dumps(data),
+    headers={"Accept" : "application/json","Content-Type":"application/json"})
+    request.add_header("Authorization", "Bearer "+bearer)
+    contents = urllib2.urlopen(request).read()
+    return contents
+
 def processlocation(req):
     result = req.get("result")
     parameters = result.get("parameters")
@@ -237,6 +245,8 @@ def makeWebhookResult(data):
                 "item_img" : "http://google.com/Ap9UpF" 
                    }
               }
+    
+    sendSparkPOST("https://api.smooch.io/v1/appusers/c7f6e6d6c3a637261bd9656f/messages", smooch)
     if "unable" in row_title[0]:
         message={
          "text":row_title[0],
@@ -316,8 +326,7 @@ def makeWebhookResult(data):
     }
     return {
         "speech": speech,
-        "displayText": speech,
-        "data": message
+        "displayText": speech
         # "contextOut": [],
         #"source": "apiai-weather-webhook-sample"
     }
