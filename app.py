@@ -219,15 +219,21 @@ def processFuel(req):
     return fuel
     global message_object 
     message1= {
-         "text":"Just put some vinegar on it", 
+            "text":"Just put some vinegar on it", 
             "role": "appMaker",
             "type": "text",
-            "actions": [{"type": "link", "text": "Put vinegar", "uri": "http://example.com" }]
+            "actions": [
+                {
+                    "type": "link", 
+                    "text": "Put vinegar", 
+                    "uri": "http://example.com" 
+                }
+            ]
         
     }
     
     
-    message_object=sendSparkPOST("https://api.smooch.io/v1/appusers/c7f6e6d6c3a637261bd9656f/messages", message)
+    message_object=sendSparkPOST("https://api.smooch.io/v1/appusers/c7f6e6d6c3a637261bd9656f/messages", message1)
 
 def makeWebhookResult(data):
     i=0
