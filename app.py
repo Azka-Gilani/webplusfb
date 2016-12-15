@@ -308,43 +308,35 @@ def makeWebhookResult(data):
   }
     else:
         message= {
-            
-  "type": "catalogue",
-  "msgid": "cat_212",
-  "items": [{
-    "title": "White T Shirt",
-    "subtitle": "Soft cotton t-shirt \nXs, S, M, L \n$10",
-    "imgurl": "http://petersapparel.parseapp.com/img/item100-thumb.png",
-    "options": [
-        {
-        "type": "url",
-        "title": "View Details",
-        "url": "http://petersapparel.parseapp.com/img/item100-thumb.png"
-      }, 
-            {
-        "type": "text",
-        "title": "Buy"
-      }
-
-    ]
-  }, 
-     {
-    "title": "Grey T Shirt",
-    "subtitle": "Soft cotton t-shirt \nXs, S, M, L \n$12",
-    "imgurl": "http://petersapparel.parseapp.com/img/item101-thumb.png",
-    "options": [
-        {
-      "type": "url",
-      "title": "View Details",
-      "url": "http://petersapparel.parseapp.com/img/item101-thumb.png"
-    }, 
-        {
-      "type": "text",
-      "title": "Buy"
-    }]
-  }]
-
-         
+           "role": "appMaker",
+    "type": "carousel",
+    "items": [{
+        "title": "Tacos",
+        "description": "Description",
+        "mediaUrl": "http://example.org/image.jpg",
+        "actions": [{
+            "text": "Select",
+            "type": "postback",
+            "payload": "TACOS"
+        }, {
+            "text": "More info",
+            "type": "link",
+            "uri": "http://example.org"
+        }]
+    }, {
+        "title": "Ramen",
+        "description": "Description",
+        "mediaUrl": "http://example.org/image.jpg",
+        "actions": [{
+            "text": "Select",
+            "type": "postback",
+            "payload": "RAMEN"
+        }, {
+            "text": "More info",
+            "type": "link",
+            "uri": "http://example.org"
+        }]
+    }]    
     }
     return {
         "speech": speech,
