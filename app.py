@@ -217,7 +217,8 @@ def processFuel(req):
     parameters = result.get("parameters")
     fuel = parameters.get("fuelstation")
     return fuel
- message1= {
+    
+    message1= {
          "text":"Just put some vinegar on it", 
             "role": "appMaker",
             "type": "text",
