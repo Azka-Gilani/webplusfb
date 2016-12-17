@@ -217,24 +217,7 @@ def processFuel(req):
     parameters = result.get("parameters")
     fuel = parameters.get("fuelstation")
     return fuel
-    global message_object 
-    message1= {
-            "text":"Just put some vinegar on it", 
-            "role": "appMaker",
-            "type": "text",
-            "actions": [
-                {
-                    "type": "link", 
-                    "text": "Put vinegar", 
-                    "uri": "http://example.com" 
-                }
-            ]
-        
-    }
-    
-    
-    message_object=sendSparkPOST("https://api.smooch.io/v1/appusers/c7f6e6d6c3a637261bd9656f/messages", message1)
-
+   
 def makeWebhookResult(data):
     i=0
     length=len(data)
@@ -332,7 +315,7 @@ def makeWebhookResult(data):
     return {
         "speech": speech,
         "displayText": speech,
-        "data":message_object
+        "data":{facebook:message}
         # "contextOut": [],
         #"source": "apiai-weather-webhook-sample"
     }
