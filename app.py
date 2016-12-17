@@ -221,6 +221,10 @@ def processFuel(req):
 def makeWebhookResult(data):
     i=0
     length=len(data)
+    varibale1='344'
+    variable2='322'
+    variable3='4332'
+    variable4='4321'
     row_id=['test','test1','test2','test3','test4','test5']
     row_title=['test','test1','test2','test3','test4','test5']
     row_location=['test','test1','test2','test3','test4','test5']
@@ -235,7 +239,11 @@ def makeWebhookResult(data):
         row_slug[i]=data[i]['slug']
         row_number[i]=data[i]['mobile_number']
         i+=1
-        
+    variable1=str(row_number[0])
+    variable2=str(row_number[1])
+    variable3=str(row_number[2])
+    variable4=str(row_number[3]) 
+    
     speech = "Here are some properties with your choice: "+"\n"+row_number[3] +" in "+ row_location[0] + " with price "+ row_price[0] +"\n"+ row_title[1] +" in "+ row_location[1] + " with price "+ row_price[1]
     if "unable" in row_title[0]:
         message={
@@ -398,7 +406,7 @@ def makeWebhookResult(data):
                 "buttons": [{
                 "type":"phone_number",
               "title":"Call Agent",
-              "payload":"+15105551234"
+              "payload":"+92"+variable1[1:]
                 },
                     {
                 "type":"element_share"
@@ -414,7 +422,7 @@ def makeWebhookResult(data):
                 "buttons": [{
                 "type":"phone_number",
               "title":"Call Agent",
-              "payload":"+15105551234"
+              "payload":"+92"+variable2[1:]
             }, 
                      {
                 "type":"element_share"
