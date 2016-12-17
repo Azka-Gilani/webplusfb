@@ -221,20 +221,22 @@ def processFuel(req):
 def makeWebhookResult(data):
     i=0
     length=len(data)
-    row_id=['test','test1','test2','test3','test4']
-    row_title=['test','test1','test2','test3','test4']
-    row_location=['test','test1','test2','test3','test4']
-    row_price=['test','test1','test2','test3','test4']
-    row_slug=['test','test1','test2','test3','test4']
+    row_id=['test','test1','test2','test3','test4','test5']
+    row_title=['test','test1','test2','test3','test4','test5']
+    row_location=['test','test1','test2','test3','test4','test5']
+    row_price=['test','test1','test2','test3','test4','test5']
+    row_slug=['test','test1','test2','test3','test4','test5']
+    row_number=['test','test1','test2','test3','test4','test5']
     while (i <length):
         row_id[i]=data[i]['p_id']
         row_title[i]=data[i]['title']
         row_location[i]=data[i]['address']
         row_price[i]=data[i]['price']
         row_slug[i]=data[i]['slug']
+        row_number[i]=data[i]['mobile_number']
         i+=1
         
-    speech = "Here are some properties with your choice: "+"\n"+row_title[0] +" in "+ row_location[0] + " with price "+ row_price[0] +"\n"+ row_title[1] +" in "+ row_location[1] + " with price "+ row_price[1]
+    speech = "Here are some properties with your choice: "+"\n"+row_number[3] +" in "+ row_location[0] + " with price "+ row_price[0] +"\n"+ row_title[1] +" in "+ row_location[1] + " with price "+ row_price[1]
     if "unable" in row_title[0]:
         message={
          "text":row_title[0],
