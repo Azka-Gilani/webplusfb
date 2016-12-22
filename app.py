@@ -328,9 +328,8 @@ def makeWebhookResult(data):
             }
         ]
   }
-            webmessage = {
+        webmessage= {
                 {
-            
   "type": "catalogue",
   "msgid": "cat_212",
   "items": [{
@@ -366,7 +365,7 @@ def makeWebhookResult(data):
         "Buy Property"
     ]
 }                          
-            }        
+        }        
     elif length==2:
          fbmessage= {
          "attachment": {
