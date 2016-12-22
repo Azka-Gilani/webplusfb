@@ -257,18 +257,8 @@ def makeWebhookResult(data):
             }
         ]
            
-    }
-        webmessage= {
-    "type": "quick_reply",
-    "content": {
-        "type": "text",
-        "text": "Please select option:"
-    },
-    "msgid": "qr_212",
-    "options": [
-        "Buy Property"
-           ]
-}
+        }
+        
     elif length==1:
                  fbmessage={
                    "attachment":{
@@ -327,45 +317,7 @@ def makeWebhookResult(data):
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             }
         ]
-  }
-                 webmessage= {
-                {
-  "type": "catalogue",
-  "msgid": "cat_212",
-  "items": [{
-    "title": "fgdgdf",
-    "subtitle": "dfgdfgdg",
-    "imgurl": "https://www.aarz.pk/assets/images/properties/12/12.actual.0.jpg",
-    "options": [
-        {
-        "type": "element_share"
-      }, 
-            {
-       "type": "phone_number",
-       "title": "Call Agent",
-       "phone_number": "+923332998150"
-      }
-
-    ]
-  }]
-},
-    {
-    "type": "quick_reply",
-    "content": {
-        "type": "text",
-        "text": "Choose an item:"
-    },
-    "msgid": "qr_212",
-    "options": [
-        QR[0],
-        QR[1],
-        QR[2],
-        QR[3],
-        QR[4],
-        "Buy Property"
-    ]
-}                          
-        } 
+  } 
                 
     elif length==2:
          fbmessage= {
