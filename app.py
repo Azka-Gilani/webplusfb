@@ -114,12 +114,6 @@ def processIntentName(req):
     intent = parameters.get("intentName")
     return intent
 
-def sendSparkPOST(url, data):
-    request = urllib2.Request(url, json.dumps(data),
-    headers={"Accept" : "application/json","Content-Type":"application/json"})
-    request.add_header("Authorization", "Bearer "+bearer)
-    contents = urllib2.urlopen(request).read()
-    return contents
 
 def processlocation(req):
     result = req.get("result")
@@ -260,7 +254,7 @@ def makeWebhookResult(data):
         
     elif length==1:
                     webmessage= {
-                {
+                
   "type": "catalogue",
   "msgid": "cat_212",
   "items": [{
@@ -279,24 +273,7 @@ def makeWebhookResult(data):
 
     ]
   }]
-},
-    {
-    "type": "quick_reply",
-    "content": {
-        "type": "text",
-        "text": "Choose an item:"
-    },
-    "msgid": "qr_212",
-    "options": [
-        QR[0],
-        QR[1],
-        QR[2],
-        QR[3],
-        QR[4],
-        "Buy Property"
-    ]
-}                          
-        }
+}                         
                 
     elif length==2:
          fbmessage= {
