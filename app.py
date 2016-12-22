@@ -333,9 +333,9 @@ def makeWebhookResult(data):
   "type": "catalogue",
   "msgid": "cat_212",
   "items": [{
-    "title": row_title[0],
-    "subtitle": row_location[0],
-    "imgurl": "https://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg",
+    "title": "fgdgdf",
+    "subtitle": "dfgdfgdg",
+    "imgurl": "https://www.aarz.pk/assets/images/properties/12/12.actual.0.jpg",
     "options": [
         {
         "type": "element_share"
@@ -343,7 +343,7 @@ def makeWebhookResult(data):
             {
        "type": "phone_number",
        "title": "Call Agent",
-       "phone_number": "+92"+variable1[1:]
+       "phone_number": "+923332998150"
       }
 
     ]
