@@ -552,8 +552,8 @@ def makeWebhookResult(data):
     return {
         "speech": speech,
         "displayText": speech,
-        "data":{"facebook":fbmessage},
-        "webmsg" : webmessage
+        "data":{"facebook":fbmessage}
+        
         # "contextOut": [],
         #"source": "apiai-weather-webhook-sample"
     }
