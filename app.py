@@ -335,7 +335,7 @@ def makeWebhookResult(data):
   "items": [{
     "title": row_title[0],
     "subtitle": row_location[0],
-    "imgurl": http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg" ,
+    "imgurl": https://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg",
     "options": [
         {
         "type": "element_share"
