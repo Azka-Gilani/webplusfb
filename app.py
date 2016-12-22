@@ -246,78 +246,57 @@ def makeWebhookResult(data):
     
     speech = "Here are some properties with your choice: "+"\n"+row_number[3] +" in "+ row_location[0] + " with price "+ row_price[0] +"\n"+ row_title[1] +" in "+ row_location[1] + " with price "+ row_price[1]
     if "unable" in row_title[0]:
-        fbmessage={
-         "text":row_title[0],
-         "quick_replies": [
-           
-                 {
-                "content_type":"text",
-                "title": "Buy Property",
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            }
-        ]
-           
-        }
+                      webmessage= {
+    "type": "quick_reply",
+    "content": {
+        "type": "text",
+        "text": "Please select option:"
+    },
+    "msgid": "qr_212",
+    "options": [
+        "Buy Property"
+           ]
+}
         
     elif length==1:
-                 fbmessage={
-                   "attachment":{
-                    "type":"template",
-                       "payload":{
-            "template_type":"generic",
-            "elements":[
-          {
-             "title":row_title[0],
-                "item_url": "https://www.aarz.pk/property-detail/"+row_slug[0],               
-               "image_url":"http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg" ,
-             "subtitle":row_location[0],
-             "buttons":[
-              {
-              "type":"phone_number",
-              "title":"Call Agent",
-              "payload":"+92"+variable1[1:]
-              },
-                 {
-                "type":"element_share"
-                  }
-            ]
-          }
-        ]
-      }
-    },
-                      "quick_replies": [
+                    webmessage= {
+                {
+  "type": "catalogue",
+  "msgid": "cat_212",
+  "items": [{
+    "title": "fgdgdf",
+    "subtitle": "dfgdfgdg",
+    "imgurl": "https://www.aarz.pk/assets/images/properties/12/12.actual.0.jpg",
+    "options": [
+        {
+        "type": "element_share"
+      }, 
             {
-                "content_type":"text",
-                "title": QR[0],
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": QR[1],
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": QR[2],
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": QR[3],
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": QR[4],
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": "Buy Property",
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            }
-        ]
-  } 
+       "type": "phone_number",
+       "title": "Call Agent",
+       "phone_number": "+923332998150"
+      }
+
+    ]
+  }]
+},
+    {
+    "type": "quick_reply",
+    "content": {
+        "type": "text",
+        "text": "Choose an item:"
+    },
+    "msgid": "qr_212",
+    "options": [
+        QR[0],
+        QR[1],
+        QR[2],
+        QR[3],
+        QR[4],
+        "Buy Property"
+    ]
+}                          
+        }
                 
     elif length==2:
          fbmessage= {
@@ -504,7 +483,7 @@ def makeWebhookResult(data):
     return {
         "speech": speech,
         "displayText": speech,
-        "data":{"facebook":fbmessage}
+        "data": webmessage
         
         # "contextOut": [],
         #"source": "apiai-weather-webhook-sample"
