@@ -246,7 +246,7 @@ def makeWebhookResult(data):
     
     speech = "Here are some properties with your choice: "+"\n"+row_number[3] +" in "+ row_location[0] + " with price "+ row_price[0] +"\n"+ row_title[1] +" in "+ row_location[1] + " with price "+ row_price[1]
     if "unable" in row_title[0]:
-        message={
+        fbmessage={
          "text":row_title[0],
          "quick_replies": [
            
@@ -258,8 +258,19 @@ def makeWebhookResult(data):
         ]
            
     }
+        webmessage= {
+    "type": "quick_reply",
+    "content": {
+        "type": "text",
+        "text": "Please select option:"
+    },
+    "msgid": "qr_212",
+    "options": [
+        "Buy Property"
+           ]
+}
     elif length==1:
-                 message={
+                 fbmessage={
                    "attachment":{
                     "type":"template",
                        "payload":{
@@ -317,8 +328,47 @@ def makeWebhookResult(data):
             }
         ]
   }
+            webmessage = {
+                {
+            
+  "type": "catalogue",
+  "msgid": "cat_212",
+  "items": [{
+    "title": row_title[0],
+    "subtitle": row_location[0],
+    "imgurl": http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg" ,
+    "options": [
+        {
+        "type": "element_share"
+      }, 
+            {
+       "type": "phone_number",
+       "title": "Call Agent",
+       "phone_number": "+92"+variable1[1:]
+      }
+
+    ]
+  }]
+},
+    {
+    "type": "quick_reply",
+    "content": {
+        "type": "text",
+        "text": "Choose an item:"
+    },
+    "msgid": "qr_212",
+    "options": [
+        QR[0],
+        QR[1],
+        QR[2],
+        QR[3],
+        QR[4],
+        "Buy Property"
+    ]
+}                          
+            }        
     elif length==2:
-         message= {
+         fbmessage= {
          "attachment": {
            "type": "template",
             "payload": {
@@ -392,7 +442,7 @@ def makeWebhookResult(data):
         ]
     }
     else:
-         message= {
+         fbmessage= {
          "attachment": {
            "type": "template",
             "payload": {
@@ -502,7 +552,8 @@ def makeWebhookResult(data):
     return {
         "speech": speech,
         "displayText": speech,
-        "data":{"facebook":message}
+        "data":{"facebook":fbmessage},
+        "webmsg" : webmessage
         # "contextOut": [],
         #"source": "apiai-weather-webhook-sample"
     }
