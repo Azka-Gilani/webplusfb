@@ -273,7 +273,7 @@ def makeWebhookResult(data):
 
     ]
   }]
-}                         
+}                        
 
     return {
         "speech": speech,
