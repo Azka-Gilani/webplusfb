@@ -275,7 +275,7 @@ def makeWebhookResult(data):
   }]
 }                         
 
-            return {
+    return {
         "speech": speech,
         "displayText": speech,
         "data": webmessage
