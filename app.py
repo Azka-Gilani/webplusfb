@@ -274,12 +274,8 @@ def makeWebhookResult(data):
     ]
   }]
 }                         
-                
-    elif length==2:
-        
-    else:
-            
-    return {
+
+            return {
         "speech": speech,
         "displayText": speech,
         "data": webmessage
